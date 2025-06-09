@@ -132,5 +132,32 @@ int main() {
         std::cerr << "Błąd: " << ex.what() << std::endl;
     }
 
+    try {
+        DeluxePizzaBuilder builder;
+        builder.setCiasto("cienkie")
+               .setSos("paprykowy")
+               .setDodatki("salami, pieczarki, cebula")
+               .setExtraSer("mozarella");
+
+        Pizza* pizza = builder.build();
+        pizza->showPizza();
+        delete pizza;
+    } catch (const std::exception& ex) {
+        std::cerr << "Błąd: " << ex.what() << std::endl;
+    }
+
+    try {
+        PizzaBuilder builder;
+        builder.setCiasto("cienkie")
+               .setSos("pomidorowy")
+               .setDodatki("ser, cebula");
+
+        Pizza* pizza = builder.build();
+        pizza->showPizza();
+        delete pizza;
+    } catch (const std::exception& ex) {
+        std::cerr << "Błąd: " << ex.what() << std::endl;
+    }
+
     return 0;
 }
