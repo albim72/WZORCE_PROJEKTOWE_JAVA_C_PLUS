@@ -7,7 +7,7 @@ class Pizza {
         std::string sos;
         std::string dodatki;
         //ctrl + D -> duplikacja linii lub bloku kodu
-    
+
     public:
         virtual void showPizza() const {
             std::cout << "Pizza z " << ciasto << ", sosem " << sos << ", dodatkami: " << dodatki <<std::endl;
@@ -68,6 +68,8 @@ class PizzaBuilder {
             return p;
         }
         virtual ~PizzaBuilder() = default;
+
+
 };
 
 class DeluxePizzaBuilder: public PizzaBuilder {
@@ -90,3 +92,20 @@ class DeluxePizzaBuilder: public PizzaBuilder {
             return p;
         }
 };
+
+int main() {
+    try {
+        DeluxePizzaBuilder builder;
+        builder.setCiasto("grube")
+            .setSos("pomidorowy")
+            .setDodatki("szynka, pieczarki, cebula")
+            .setExtraSer("parmezan");
+
+        Pizza* pizza = builder.build();
+        pizza->showPizza();
+        delete pizza;
+    } catch (std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+    return 0;
+}
