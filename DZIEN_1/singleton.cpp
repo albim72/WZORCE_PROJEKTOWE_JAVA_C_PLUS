@@ -38,5 +38,11 @@ int main() {
 
     Singleton* s2 = Singleton::getInstance();
     s2->doSomething();
+    if (s1 ==s2) {
+        std::cout << "ta sama instancja" << std::endl;
+    }
+    else {
+        std::cout << "rożne instancje" << std::endl;
+    }
     return 0;
 }
