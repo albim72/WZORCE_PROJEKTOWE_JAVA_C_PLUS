@@ -1,0 +1,5 @@
+Wzorce: 
+factory  -> do tworenia obiektów Napoj (kawa/czekolada...)
+builder -> proces tworzenia różnorodnych napojów (wariantów)
+decorator -> dyamiczne dodawanie składowych do napojów
+facade -> pośrednik między logiką biznesową a sprzętem (pompa wody, grzałka, czytniki...)
