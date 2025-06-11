@@ -1,0 +1,5 @@
+SEND Stark 200 TO Winterfell
+SEND Lannister 150 TO Harrenhal
+ATTACK Stark Lannister 100
+SEND Stark 50 TO Harrenhal
+REPORT
